@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Cardales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="shortcut icon" href="../media/loscardales.jpg">
+</head>
+
+<body>
+    <header class="header">
+        <a href="../index.html"><img src="../media/loscardales.jpg" alt="foto logo"></a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#picadas">Picadas</a></li>
+                <li><a href="../index.html#cajas">Cajas</a></li>
+                <li><a href="./quienessomos.html">Nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+    <!--Imagen lateral-->
+    <section class="contacto">
+
+        <div class="foto">
+            <img src="../media/foto3.jpeg" alt="imagenLateral">
+        </div>
+
+
+        <!--Formulario consulta-->
+        <div class="formulario">
+            <div class="formularioP">
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur molestie pulvinar ante, a laoreet
+                    ante imperdiet non.</p>
+            </div>
+            <div class="formularioForm">
+                <form class="form" action="/" method="post">
+
+                    <label for="nombre">Nombre: </label>
+                    <input id="nombre" type="text">
+
+                    <label for="email">Email: </label>
+                    <input type="email" id="email">
+
+
+                    <label for="selector">Asunto: </label>
+                    <select name="" id="selector">
+                        <option value="Recomendaciones">Recomendaciones</option>
+                        <option value="Consultas">Consultas</option>
+                        <option value="Ventas">Ventas</option>
+                        <option value="Quejas">Quejas</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+
+                    <label for="cajatexto">Mensaje: </label>
+                    <textarea id="cajatexto" cols="30" rows="10"></textarea>
+
+                    <input class="botonDos" type="submit" value="Enviar">
+
+                    <input type="reset" value="Resetear Campos">
+
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+
+        <ul class="footerMenu">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.html#picadas">Picadas</a></li>
+            <li><a href="../index.html#cajas">Cajas</a></li>
+            <li><a href="./quienessomos.html">Nosotros</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+
+        </ul>
+
+        <div class="newsletter">
+            <h4>Suscribite a nuestro Newsletter!</h4>
+            <p>Recibí todas las novedades y las mejores promociones todas las semanas!</p>
+            <form action="/" method="post"></form>
+            <div>
+
+                <input type="email" name="" id="email" placeholder="Ingresa tu email">
+            </div>
+        </div>
+
+        <div class="datosUbicacion">
+            <ul id="listaInfo">
+
+                <li>Calle 2 esquina 44</li>
+                <li>La Plata </li>
+                <li>(0221) 4831917</li>
+                <li>consultas@loscardales.com.ar</li>
+
+            </ul>
+
+            <!--Googlemaps ubicación-->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.0104054593057!2d-57.9522723850419!3d-34.90618838107128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e6462959c5d1%3A0x8682558be595b28e!2sLos%20Cardales!5e0!3m2!1ses!2sar!4v1635863925887!5m2!1ses!2sar"
+                width="150" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </footer>
+</body>
+
+</html>
