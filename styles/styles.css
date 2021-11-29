@@ -7,13 +7,30 @@
 
 body {
 
-    margin-top: 8%;
+    margin-top: 9%;
     font-family: raleway, sans-serif;
 
 }
+.headerBoot {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
 
+}
+
+.dos {
+    flex-grow: 0;
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+.fotoInicio img {
+    width: 100vw;
+
+}
 /*HEADER*/
-
+/* 
 .header {
 
     position: fixed;
@@ -51,30 +68,30 @@ body {
     margin-right: 2%;
     padding: 2%;
     /* align-content:center; */
-}
+/* } */
 
-.header nav ul li a {
+/* .header nav ul li a {
     display: block;
     /*    padding: 10%; */
-    text-decoration: none;
+/*     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 500;
     color: black
-}
+} */
 
-.header nav ul li:hover {
+/* .header nav ul li:hover {
     transform: scale(1.03);
-}
-
+/* } */ */
+ */ */
 /*PAGINA INICIO*/
 
-.fotoInicio img {
-    width: 100vw;
 
-}
 
 
 /*PICADAS*/
+.paddd {
+    padding: 2%;
+}
 
 .picadas {
     margin-top: 5%;
