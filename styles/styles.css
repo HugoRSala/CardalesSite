@@ -11,6 +11,7 @@ body {
     font-family: raleway, sans-serif;
 
 }
+/*HEADER*/
 .headerBoot {
     position: fixed;
     top: 0;
@@ -19,82 +20,35 @@ body {
 
 }
 
-.dos {
+.nav {
     flex-grow: 0;
     padding: 2rem;
     font-size: 1.5rem;
 }
 
+.navbar-nav li a:hover {
+    transform: scale(1.03);
+}
+/* SECCION FOTO CAROUSEL */
+
 .fotoInicio img {
     width: 100vw;
 
 }
-/*HEADER*/
-/* 
-.header {
 
-    position: fixed;
-    top: 0;
-    height: 17%;
+.carrusel {
     width: 100%;
-    background-color: white;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5%;
+    margin: 0 auto
+    ;
 }
-
-.header nav {
-    display: flex;
-    width: 40%;
-    margin-right: 3%;
-
-
-}
-
-
-.header nav ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
-}
-
-
-.header nav ul li {
-    display: flex;
-    text-decoration: none;
-    margin-right: 2%;
-    padding: 2%;
-    /* align-content:center; */
-/* } */
-
-/* .header nav ul li a {
-    display: block;
-    /*    padding: 10%; */
-/*     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: black
-} */
-
-/* .header nav ul li:hover {
-    transform: scale(1.03);
-/* } */ */
- */ */
-/*PAGINA INICIO*/
 
 
 
 
 /*PICADAS*/
-.paddd {
-    padding: 2%;
-}
 
 .picadas {
-    margin-top: 5%;
+    padding-top: 6%;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -113,12 +67,62 @@ body {
     text-align: center;
     padding: 5%;
 }
+.picadas label{
+    margin: 0 0 2% 2%;
+    font-size: 1.5rem;
+    
+    
+}
+/* select picadas */
+.selectBox {
+    max-width: 250px;
+	position: relative;
+}
 
 .picadas select {
-    margin: 2% 0;
+    margin-left: 10%;
+    appearance: none;
+    -webkit-appearance: none;
+	-moz-appearance: none;
+    display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+
+}
+.selectBox i {
+
+    position: absolute;
+	right: 0px;
+	top: calc(50% - 13px);
+	width: 16px;
+	height: 16px;
+	display: block;
+	border-left:4px solid #000000;
+	border-bottom:4px solid #000000;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	transition: all 0.25s ease;
+}
+.selectBox:hover i{
+	margin-top: 3px;
 }
 
 .fotosPicadas {
+    padding: 3% 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -128,14 +132,29 @@ body {
 }
 
 .fotosPicadas article {
-    padding: 0%;
+    padding: 1%;
+    width: 50%;
+    
 }
 
-.fotosPicadas img {
-    width: 100%;
-
-
+.animation {
+    animation-name: aumento;
+    animation-iteration-count: infinite;
+    -o-animation-timing-function: ease-in;
+    animation-duration: 2s;
 }
+@keyframes aumento {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 /* GRID TABLA PICADAS */
 
@@ -160,7 +179,7 @@ body {
 /*CAJAS*/
 
 .cajas {
-    margin-top: 10%;
+    padding-top: 6%;
     width: 100vw;
 }
 
@@ -189,16 +208,26 @@ body {
 
 .cajas img {
     width: 100%;
+    transition: transform 1s;
+
 }
 
-
+.cajas img:hover {
+    transform: scale(1.02);
+}
 
 
 /*NOSOTROS*/
 
-.historia img {
-    width: 100%;
+.historiaTexto {
+    border: solid black 1px;
+    
+    margin: 3%
+}
 
+.historia img {
+    width: 100vw;
+    
 }
 
 .historia h1 {
@@ -211,6 +240,7 @@ body {
     margin-bottom: 3%;
     padding: 3%;
     font-size: 1.5rem;
+    
 }
 
 /*CONTACTO*/
@@ -289,6 +319,8 @@ body {
 /*FOOTER*/
 
 .footer {
+    background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(216,213,230,1) 35%, rgba(255,255,255,1) 100%);
     display: grid;
     grid-template-columns: 2fr 2fr 3fr;
 }
@@ -369,23 +401,7 @@ body {
 
 }
 
-/* .footer {
-    margin-top: 1%;
-    margin-left: 2%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-}
-.footer ul {
-    display: inline-block;
-    list-style-type: none;
-}
-
-
-
-
- */
 
 /* MEDIA QUERY 1150PX */
 @media screen and (max-width: 1150px) {

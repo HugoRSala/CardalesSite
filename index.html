@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <!-- HEADER -->
     <header class="headerBoot">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,21 +29,13 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse dos" id="navbarNavDropdown">
+                <div class="collapse navbar-collapse nav" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#picadas" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Picadas
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#picadas">Chicas</a></li>
-                                <li><a class="dropdown-item" href="#">Medianas</a></li>
-                                <li><a class="dropdown-item" href="#">Grandes</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#picadas">Picadas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#cajas">Cajas</a>
@@ -53,32 +46,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./pages/contacto.html">Contacto</a>
                         </li>
+                   
                         
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!--  <header class="header">
-        <a href="./index.html"><img src="./media/loscardales.jpg" alt="foto logo"></a>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="#picadas">Picadas</a></li>
-                <li><a href="#cajas">Cajas</a></li>
-                <li><a href="./pages/quienessomos.html">Nosotros</a></li>
-                <li><a href="./pages/contacto.html">Contacto</a></li>
-
-            </ul>
-
-        </nav>
-    </header> -->
 
 
     <main>
         <!--Carrusel imagenes-->
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide carrusel" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -119,26 +99,63 @@
                 <h2>Nuestras Picadas</h2>
 
                 <!--Selector tamaño-->
-                <select name="tamaño" id="">
-                    <option value="s">comen 2 pican 3</option>
-                    <option value="m">comen 4 pican 6</option>
-                    <option value="l">comen 6 pican 9</option>
-                </select>
+                <label for="tamano">Seleccione tamaño</label>
+                <div class="selectBox">
+                   
+                    <select name="tamano" id="tamano">
+                        <option value="s">comen 2 pican 3</option>
+                        <option value="m">comen 4 pican 6</option>
+                        <option value="l">comen 6 pican 9</option>
+                    </select>
+                    <i></i>
+                </div>
             </div>
 
             <!--Imagenes picadas-->
             <div class="fotosPicadas">
                 <article>
-                    <img src="./media/Picada_18c.jpg" alt="picada1">
+                        <div class="card" style="width: 100%;">
+                            <img src="./media/Picada_18c.jpg" class="card-img-top" alt="picadaUno">
+                            <div class="card-body">
+                            <h5 class="card-title">Chacarera</h5>
+                            <p class="card-text">Comen 2 pican 3</p>
+                            <a href="#" class="btn btn-danger animation">Oferta</a>
+                            </div>
+                        </div>
+                    <!-- <img src="./media/Picada_18c.jpg" alt="picada1"> -->
                 </article>
                 <article>
-                    <img src="./media/Picada_12c.jpg" alt="picada2">
+                    <div class="card" style="width: 100%;">
+                        <img src="./media/Picada_12c.jpg" class="card-img-top" alt="picadaUno">
+                        <div class="card-body">
+                        <h5 class="card-title">Carnavalito</h5>
+                        <p class="card-text">Comen 2 pican 3</p>
+                        <a href="#" class="btn btn-dark">Comprar</a>
+                        </div>
+                    </div>
+                  <!--   <img src="./media/Picada_12c.jpg" alt="picada2"> -->
                 </article>
                 <article>
-                    <img src="./media/Picada_22c.jpg" alt="picada3">
+                    <div class="card" style="width: 100%;">
+                        <img src="./media/Picada_22c.jpg" class="card-img-top" alt="picadaUno">
+                        <div class="card-body">
+                        <h5 class="card-title">Malambo</h5>
+                        <p class="card-text">Comen 2 pican 3</p>
+                        <a href="#" class="btn btn-dark">Comprar</a>
+                        </div>
+                    </div>
+                    <!-- <img src="./media/Picada_22c.jpg" alt="picada3"> -->
                 </article>
                 <article>
-                    <img src="./media/Picada_31c.jpg" alt="picada4">
+                    <div class="card" style="width: 100%;">
+                        <img src="./media/Picada_31c.jpg" class="card-img-top" alt="picadaUno">
+                        <div class="card-body">
+                        <h5 class="card-title">Milonga</h5>
+                        <p class="card-text">Comen 2 pican 3</p>
+                        <a href="#" class="btn btn-dark">Comprar</a>
+                        </div>
+                    </div>
+                    <!-- <img src="./media/Picada_31c.jpg" alt="picada4"> -->
                 </article>
             </div>
 
