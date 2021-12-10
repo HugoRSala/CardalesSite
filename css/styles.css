@@ -140,7 +140,7 @@ body {
 .animation {
     animation-name: aumento;
     animation-iteration-count: infinite;
-    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     animation-duration: 2s;
 }
 @keyframes aumento {
@@ -320,7 +320,7 @@ body {
 
 .footer {
     background: rgb(255,255,255);
-background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(216,213,230,1) 35%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(216,213,230,1) 35%, rgba(255,255,255,1) 100%);
     display: grid;
     grid-template-columns: 2fr 2fr 3fr;
 }

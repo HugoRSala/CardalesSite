@@ -1,0 +1,38 @@
+
+.historia {
+    h1 {
+        width: 100%;
+        font-size: 2.5rem;
+        text-align: left;
+        padding: 4%;
+        margin: 2% 0 3% 0;
+        background-image: url(../media/guardapizarra.png);
+            
+        color: white;
+      
+    }
+    &Texto {
+        
+        
+        margin: 3%
+    }
+    
+    img {
+        width: 100vw;
+        
+    }
+
+    h2 {
+        padding: 3% 0;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    p {
+        margin-bottom: 3%;
+        padding: 3%;
+        font-size: 1.5rem;
+        
+    }
+    
+}

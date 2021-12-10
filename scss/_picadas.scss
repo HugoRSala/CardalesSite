@@ -1,0 +1,138 @@
+
+.picadas {
+    padding-top: 6%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+
+    &Menu {
+        width: 100%;
+        /* display: flex; */
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+        
+            font-size: 2.5rem;
+            text-align:left;
+            padding: 4%;
+            margin: 5% 0;
+            background-image: url(../media/guardapizarra.png);
+            color: #f0f0f0;
+            
+        }
+    }
+
+    
+
+    label{
+        margin: 0 0 2% 2%;
+        font-size: 1.5rem;
+    }
+
+    select {
+        margin-left: 10%;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+          padding: 7px 10px;
+          height: 42px;
+          outline: 0; 
+          border: 0;
+        border-radius: 0;
+        background: #f0f0f0;
+        color: #7b7b7b;
+        font-size: 1em;
+        color: #999;
+        font-family: 
+        'Quicksand', sans-serif;
+        border:2px solid rgba(0,0,0,0.2);
+        border-radius: 12px;
+        position: relative;
+        transition: all 0.25s ease;
+    
+    }
+}
+
+
+/* select picadas */
+.selectBox {
+    max-width: 250px;
+	position: relative;
+
+    i {
+
+        position: absolute;
+        right: 0px;
+        top: calc(50% - 13px);
+        width: 16px;
+        height: 16px;
+        display: block;
+        border-left:4px solid #000000;
+        border-bottom:4px solid #000000;
+        transform: rotate(-45deg); /* Giramos el cuadrado */
+        transition: all 0.25s ease;
+    }
+
+    &:hover i{
+        margin-top: 3px;
+    }
+}
+
+
+.fotosPicadas {
+    padding: 3% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    article {
+        padding: 1%;
+        width: 50%;
+        
+    }
+
+}
+
+.animation {
+    animation-name: aumento;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+@keyframes aumento {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* GRID TABLA PICADAS */
+
+.tablaGrid {
+    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 10rem);
+    
+    
+}
+
+.gridItem {
+    display: flex;
+    justify-content: center;
+    border: solid 1px black;
+    border-radius: 3px;
+
+}

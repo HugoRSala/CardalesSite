@@ -1,0 +1,200 @@
+@media screen and (max-width: 1150px) {
+    .header nav {
+        width: 40%;
+        margin-right: 10%;
+
+
+    }
+
+    .footer iframe {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-right: 3%;
+        padding: 1rem;
+    }
+}
+
+/* MEDIA QUERY 768PX */
+
+@media screen and (max-width: 768px) {
+    .header {
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                display: flex;
+                text-decoration: none;
+                margin-right: 2%;
+
+                a {
+
+                    display: flex;
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: black;
+                    align-content: flex-start;
+            
+                }
+        
+            }    
+
+        }
+    }
+
+    .picadas h2 {
+        font-size: 2.0rem;
+        text-align: center;
+        padding: 5%;
+    }
+    .cajas h2 {
+        font-size: 2.0rem;
+        text-align: center;
+        padding: 5%;
+          }
+          
+    .tablaGrid {
+        justify-content: center;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 5rem)
+    }
+
+    .gridItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px black;
+
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+
+        grid-template-areas:
+            "footerMenu newsletter"
+            "footerMenu newsletter"
+            "datosUbicacion datosUbicacion";
+
+        iframe {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin-right: 3%;
+            padding: 1rem;
+            }    
+    }
+
+    .newsletter {
+        grid-area: newsletter;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            width: 20rem;
+            height: 1.5rem;
+            margin-left: 0.2rem;
+    
+        }
+
+        p {
+            margin: 0.4rem;
+            font-size: 0.9rem;
+        }
+    
+
+    }
+
+    .footerMenu {
+        grid-area: footerMenu;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: black;
+            padding: 1rem;
+    
+        }
+    
+    }
+
+    .datosUbicacion {
+        grid-area: datosUbicacion;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        li {
+            display: flex;
+    
+            justify-content: space-around;
+    
+        }
+
+
+
+    }
+
+    #listaInfo {
+
+        display: flex;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        /* padding: 1rem; */
+        /*   align-content:center; */
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: black;
+
+    }
+
+   
+}
+
+@media screen and (max-width: 500px) {
+    .picadas h2 {
+        font-size: 1.7rem;
+        text-align: center;
+        padding: 5%;
+    }
+
+    .cajas h2 {
+        font-size: 1.7rem;
+        text-align: center;
+        padding: 5%;
+    
+    }
+    .footer {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-gap: 10%;
+
+        grid-template-areas:
+            "footerMenu footerMenu"
+            "newsletter newsletter"
+            "datosUbicacion datosUbicacion";
+    }
+
+
+}

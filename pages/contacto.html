@@ -13,10 +13,13 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
+
+    <!-- HEADER -->
+
     <header class="headerBoot">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,20 +54,21 @@
         </nav>
     </header>
 
-    <!--Imagen lateral-->
+    
     <section class="contacto">
 
-        <div class="foto">
-            <img src="../media/foto3.jpeg" alt="imagenLateral">
+        <div>
+            <h1>Contacto.</h1>
         </div>
 
 
         <!--Formulario consulta-->
         <div class="formulario">
+
             <div class="formularioP">
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur molestie pulvinar ante, a laoreet
-                    ante imperdiet non.</p>
+                <p> Cualquier duda, consulta o información envianos un mensaje. <br> Nos ayudas a mejorar día a día! <br> Te estaremos contactando a la brevedad! Muchas gracias!</p>
             </div>
+
             <div class="formularioForm">
                 <form class="form" action="/" method="post">
 
@@ -87,15 +91,25 @@
                     <label for="cajatexto">Mensaje: </label>
                     <textarea id="cajatexto" cols="30" rows="10"></textarea>
 
-                    <input class="botonDos" type="submit" value="Enviar">
+                    <input id="botonSubmit" type="submit" value="Enviar">
 
-                    <input type="reset" value="Resetear Campos">
+                    <input id="botonReset" type="reset" value="Resetear Campos">
 
 
                 </form>
             </div>
         </div>
     </section>
+
+    <!-- BOTON WHATSAPP -->
+    
+    <div class="btn-whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=5492216435164" target="_blank">
+        <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
+        </a>
+    </div>
+    
+    <!-- FOOTER -->
 
     <footer class="footer">
 
