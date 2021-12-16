@@ -35,7 +35,6 @@ body {
   /* align-items: center; */ }
   .picadasMenu {
     width: 100%;
-    /* display: flex; */
     justify-content: space-between;
     display: flex;
     flex-direction: column; }
@@ -49,7 +48,7 @@ body {
   .picadas label {
     margin: 0 0 2% 2%;
     font-size: 1.5rem; }
-  .picadas select {
+  .picadas select, .picadas .formularioForm input, .formularioForm .picadas input {
     margin-left: 10%;
     appearance: none;
     -webkit-appearance: none;
@@ -154,6 +153,7 @@ body {
     .cajas img:hover {
       transform: scale(1.02); }
 
+/* BOTON WHATSAPP */
 .btn-whatsapp {
   display: block;
   width: 70px;
@@ -228,16 +228,13 @@ body {
     font-size: 2rem;
     padding: 1% 0;
     margin-left: 4%; }
-  .formularioForm input {
-    border-radius: 5px;
-    width: 60%;
-    height: 40px;
-    margin-left: 6%;
-    border: 1px solid black; }
-  .formularioForm select {
+  .formularioForm select, .formularioForm input {
     border-radius: 5px;
     border: 1px solid black;
     margin-left: 6%; }
+  .formularioForm input {
+    width: 60%;
+    height: 40px; }
   .formularioForm textarea {
     width: 80%;
     height: 50%;
@@ -289,8 +286,8 @@ body {
   grid-row: 1/3;
   display: flex;
   flex-direction: column;
-  align-items: left;
   justify-content: center;
+  align-items: left;
   list-style: none; }
   .footerMenu a {
     text-decoration: none;

@@ -1,23 +1,22 @@
-
 .contacto {
     display: flex;
     flex-direction: column;
     width: 100vw;
     margin-bottom: 2%;
     align-items: center;
-    
+
     h1 {
         width: 100vw;
         font-size: 2.5rem;
         text-align: left;
         padding: 4%;
-        
+
         background-image: url(../media/guardapizarra.png);
-            
+
         color: white;
-      
+
     }
- 
+
 }
 
 
@@ -28,20 +27,20 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    
+
     &P {
         width: 100vw;
-    
+
         p {
-        font-size: 1.5rem;
-        padding: 3%;
-    
+            font-size: 1.5rem;
+            padding: 3%;
+
         }
 
     }
 
     &Form {
-        
+
         form {
             display: flex;
             width: 90vw;
@@ -49,7 +48,7 @@
             flex-direction: column;
             align-items: flex-start;
         }
-    
+
         label {
             display: flex;
             width: 50%;
@@ -58,32 +57,29 @@
             margin-left: 4%;
         }
 
-        input {
-            border-radius: 5px;
-            width: 60%;
-            height: 40px;
-            margin-left: 6%;
-            border: 1px solid rgb(0, 0, 0);
-           
-        }
-    
         select {
             border-radius: 5px;
             border: 1px solid rgb(0, 0, 0);
             margin-left: 6%;
         }
-    
+
+        input {
+            @extend select;
+            width: 60%;
+            height: 40px;
+        }
+
         textarea {
             width: 80%;
             height: 50%;
             border-radius: 5px;
             border: 1px solid rgb(0, 0, 0);
             margin: 0 0 1% 6%;
-            
+
         }
 
     }
-    
+
 }
 
 
@@ -92,9 +88,10 @@
     color: white;
     margin-bottom: 1%;
     width: 15%;
-   
+
 
 }
+
 #botonReset {
     width: 15%;
 }
