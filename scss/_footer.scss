@@ -16,7 +16,6 @@
 
 .newsletter {
     grid-column: 2/3;
-    /* margin-top: 5%; */
     @include flex-column-center;
     align-items: center;
     font-size: 1.2rem;
