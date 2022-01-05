@@ -170,16 +170,24 @@
    
 }
 
-@media screen and (max-width: 500px) {
-    .picadas h2 {
-        font-size: 1.7rem;
-        text-align: center;
-        padding: 5%;
+@media screen and (max-width: 520px) {
+    
+    .picadas {
+        
+        h2 {
+            font-size: 1.7rem;
+            text-align:left;
+            padding: 5%;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
     }
 
     .cajas h2 {
         font-size: 1.7rem;
-        text-align: center;
+        text-align:left;
         padding: 5%;
     
     }

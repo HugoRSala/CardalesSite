@@ -115,7 +115,8 @@ p {
   align-items: center; }
   .fotosPicadas article {
     padding: 1%;
-    width: 50%; }
+    width: 50%;
+    min-width: 55vh; }
 
 .animation {
   animation-name: aumento;
@@ -146,7 +147,8 @@ p {
     height: auto;
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    padding: 1%; }
     .cajas div article {
       align-content: flex-start;
       margin-bottom: 3%;
@@ -244,16 +246,17 @@ p {
     height: 50%;
     border-radius: 5px;
     border: 1px solid black;
-    margin: 0 0 1% 6%; }
+    margin: 0 0 0.5rem 6%; }
 
 #botonSubmit {
   background-color: black;
   color: white;
-  margin-bottom: 1%;
-  width: 15%; }
+  margin-bottom: 0.5rem;
+  width: 10rem; }
 
 #botonReset {
-  width: 15%; }
+  width: 10rem;
+  margin-bottom: 1rem; }
 
 .footer {
   background: white;
@@ -417,14 +420,16 @@ p {
     font-weight: 500;
     color: black; } }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 520px) {
   .picadas h2 {
     font-size: 1.7rem;
-    text-align: center;
+    text-align: left;
     padding: 5%; }
+  .picadas p {
+    font-size: 0.9rem; }
   .cajas h2 {
     font-size: 1.7rem;
-    text-align: center;
+    text-align: left;
     padding: 5%; }
   .footer {
     display: grid;
