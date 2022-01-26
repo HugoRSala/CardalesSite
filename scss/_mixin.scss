@@ -3,3 +3,11 @@
     flex-direction: column;
     justify-content: center;
 }
+
+@mixin tituloSeccion {
+    font-size: 10vw;
+    text-align: left;
+    padding: 0.3em;
+    background-color: #EAC136;
+    color: black;
+}

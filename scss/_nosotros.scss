@@ -1,38 +1,33 @@
 
 .historia {
-    h1 {
-        width: 100%;
-        font-size: 2.5rem;
-        text-align: left;
-        padding: 4%;
-        margin: 2% 0 3% 0;
-        background-image: url(../media/guardapizarra.png);
-            
-        color: white;
-      
+    &Titulo {
+        @include tituloSeccion;
     }
-    &Texto {
-        
-        
-        margin: 3%
-    }
+    &Container {
+        display: flex;
+        width: 100%; 
+        padding: 2%;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 100%;
+            padding: 4%;
+
+
+        }
+        h2 {
+            padding: 3% 0 0 3%;
+        }
+        p {
+            margin: 3%;
+            font-size: 1.3rem;
+
+        }
+     }
+
     
-    img {
-        width: 100vw;
-        
-    }
-
-    h2 {
-        padding: 3% 0;
-        text-align: center;
-        font-size: 2rem;
-    }
-
-    p {
-        margin-bottom: 3%;
-        padding: 3%;
-        font-size: 1.5rem;
-        
-    }
+    
+  
     
 }

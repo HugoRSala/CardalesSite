@@ -1,86 +1,99 @@
 .contacto {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     margin-bottom: 2%;
-    align-items: center;
+   
 
-    h1 {
-        width: 100vw;
-        font-size: 2.5rem;
-        text-align: left;
+   .tituloContacto {
+       @include tituloSeccion;
+   }
+
+   .formularioP {
+    width: 100%;
+    
+
+    p {
+        text-align: center;
+        font-size: 1.5rem;
         padding: 4%;
-
-        background-image: url(../media/guardapizarra.png);
-
-        color: white;
+        margin: 0;
 
     }
 
 }
-
-
-
-.formulario {
+   .containerContacto {
 
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: row;
 
-    &P {
-        width: 100vw;
+  
 
-        p {
-            font-size: 1.5rem;
-            padding: 3%;
+    .formulario {
 
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 50%;
+    
+        
+    
+        &Form {
+            width: 100%;
+            form {
+                display: flex;
+                width: 90%;
+                z-index: -1;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+    
+            label {
+                display: flex;
+                width: 50%;
+                font-size: 2rem;
+                padding: 1% 0;
+                margin-left: 4%;
+            }
+    
+            select {
+                border-radius: 5px;
+                border: 1px solid rgb(0, 0, 0);
+                margin-left: 6%;
+            }
+    
+            input {
+                @extend select;
+                width: 100%;
+                height: 40px;
+            }
+    
+            textarea {
+                width: 100%;
+                height: 50%;
+                border-radius: 5px;
+                border: 1px solid rgb(0, 0, 0);
+                margin: 0 0 0.5rem 6%;
+    
+            }
+    
         }
-
+    
     }
-
-    &Form {
-
-        form {
-            display: flex;
-            width: 90vw;
-            z-index: -1;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        label {
-            display: flex;
-            width: 50%;
-            font-size: 2rem;
-            padding: 1% 0;
-            margin-left: 4%;
-        }
-
-        select {
-            border-radius: 5px;
-            border: 1px solid rgb(0, 0, 0);
-            margin-left: 6%;
-        }
-
-        input {
-            @extend select;
-            width: 60%;
-            height: 40px;
-        }
-
-        textarea {
-            width: 80%;
-            height: 50%;
-            border-radius: 5px;
-            border: 1px solid rgb(0, 0, 0);
-            margin: 0 0 0.5rem 6%;
-
-        }
-
+    .containerIframe {
+        width: 50%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+}
 
 }
+
+
+
 
 
 #botonSubmit {

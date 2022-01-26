@@ -1,0 +1,177 @@
+.carouselMobile {
+    display: none;
+}
+
+.carrusel {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.info {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .mediosDePago {
+        width: 50%;
+        text-align: center;
+        padding: 2%;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+    }
+
+    .zonasDeEntrega {
+        @extend .mediosDePago;
+    }
+
+}
+
+.productos {
+    display: flex;
+    flex-direction: column;
+    
+
+    .tituloProductos {
+        @include tituloSeccion;
+        margin-top: 2%;
+
+
+    }
+
+    .imagenesProductos {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        justify-content: space-around;
+
+
+
+
+
+        .contenedorImagenes {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+          
+
+
+            
+
+
+            &Foto {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                border: solid 1px rgb(233, 225, 225);
+                padding: 2%;
+                margin: 2% 0;
+                &:hover {
+                    transform: scale(1.01);
+                    transition: 1s;
+                }
+
+                h2 {
+                    margin: 0;
+                    padding-top: 0.4rem;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+}
+
+.eventos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    margin-bottom: 3%;
+
+
+
+    &Titulo {
+
+        width: 100%;
+        @include tituloSeccion;
+        margin-bottom: 2%;
+
+    }
+
+    &Container {
+        width: 100%;
+        padding: 3% 3% 0 3%;
+        border: solid 1px rgb(233, 225, 225);
+        
+    }
+
+    &Imagen {
+        width: 100%;
+
+        img {
+            width: 100%;
+
+        }
+    }
+
+    &Texto {
+        padding-top: 2%;
+        width: 100%;
+        text-align: center;
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 0;
+        }
+        a {
+            margin: 2%;
+            
+        }
+    }
+
+
+
+}
+
+
+
+
+
+.sombra {
+    box-shadow: 1px 3px 5px rgb(197, 190, 190);
+}

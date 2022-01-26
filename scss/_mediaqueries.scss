@@ -1,75 +1,4 @@
-@media screen and (max-width: 1150px) {
-    .header nav {
-        width: 40%;
-        margin-right: 10%;
-
-
-    }
-
-    .footer iframe {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        margin-right: 3%;
-        padding: 1rem;
-    }
-}
-
-/* MEDIA QUERY 768PX */
-
-@media screen and (max-width: 768px) {
-    .header {
-
-        nav ul {
-            display: flex;
-            flex-wrap: wrap;
-
-            li {
-                display: flex;
-                text-decoration: none;
-                margin-right: 2%;
-
-                a {
-
-                    display: flex;
-                    text-decoration: none;
-                    font-size: 20px;
-                    font-weight: 500;
-                    color: black;
-                    align-content: flex-start;
-            
-                }
-        
-            }    
-
-        }
-    }
-
-    .picadas h2 {
-        font-size: 2.0rem;
-        text-align: center;
-        padding: 5%;
-    }
-    .cajas h2 {
-        font-size: 2.0rem;
-        text-align: center;
-        padding: 5%;
-          }
-          
-    .tablaGrid {
-        justify-content: center;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 5rem)
-    }
-
-    .gridItem {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: solid 1px black;
-
-    }
+@media screen and (max-width: 1000px) {
 
     .footer {
         display: grid;
@@ -79,14 +8,6 @@
             "footerMenu newsletter"
             "footerMenu newsletter"
             "datosUbicacion datosUbicacion";
-
-        iframe {
-            display: none;
-            justify-content: center;
-            align-items: center;
-            margin-right: 3%;
-            padding: 1rem;
-            }    
     }
 
     .newsletter {
@@ -107,24 +28,25 @@
             width: 20rem;
             height: 1.5rem;
             margin-left: 0.2rem;
-    
+
         }
 
         p {
             margin: 0.4rem;
             font-size: 0.9rem;
         }
-    
+
 
     }
 
     .footerMenu {
         grid-area: footerMenu;
         display: flex;
-        flex-direction: column;
-        align-items: left;
+        flex-direction: row;
+        align-items: center;
         justify-content: center;
-        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
 
         a {
             text-decoration: none;
@@ -132,9 +54,9 @@
             font-weight: 500;
             color: black;
             padding: 1rem;
-    
+
         }
-    
+
     }
 
     .datosUbicacion {
@@ -145,9 +67,9 @@
 
         li {
             display: flex;
-    
+
             justify-content: space-around;
-    
+
         }
 
 
@@ -166,17 +88,193 @@
         color: black;
 
     }
+}
 
-   
+/* MEDIA QUERY 768PX */
+
+@media screen and (max-width: 768px) {
+
+    .carouselDesktop {
+        display: none;
+    }
+
+    .carouselMobile {
+        display: block;
+
+    }
+
+    .picadas h2 {
+        font-size: 2.0rem;
+        text-align: center;
+        padding: 5%;
+    }
+
+    .cajas h2 {
+        font-size: 2.0rem;
+        text-align: center;
+        padding: 5%;
+    }
+
+
+    .footer {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+
+        grid-template-areas:
+            "footerMenu footerMenu"
+            "newsletter newsletter"
+            "datosUbicacion datosUbicacion";
+    }
+
+    .newsletter {
+        grid-area: newsletter;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        padding: 5%;
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            width: 20rem;
+            height: 1.5rem;
+            margin-left: 0.2rem;
+
+        }
+
+        p {
+            margin: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+
+    }
+
+    .footerMenu {
+        grid-area: footerMenu;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 4% 0 0 0;
+
+        a {
+            text-decoration: none;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: black;
+            padding: 1rem;
+
+        }
+
+    }
+
+    .datosUbicacion {
+        grid-area: datosUbicacion;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        li {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+
+
+    }
+
+    #listaInfo {
+        display: flex;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: black;
+
+    }
+
+    .contacto {
+
+
+        .containerContacto {
+            flex-direction: column;
+            width: 100%;
+
+            .formulario {
+                width: 100%;
+            }
+
+            .containerIframe {
+                width: 100%;
+
+                iframe {
+                    width: 100%;
+                    padding: 5%;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 520px) {
-    
+    .info {
+        flex-direction: column;
+
+        .mediosDePago {
+            width: 100%;
+            margin: 4% 0;
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .zonasDeEntrega {
+            width: 100%;
+            margin-bottom: 4%;
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+    }
+    .productos {
+        .tituloProductos {
+            margin: 4% 0 2% 0;
+        }
+    }
+    .eventos {
+        margin-bottom: 3%;
+
+        &Titulo {
+            margin:2% 0 1% 0;
+        }
+        &Container {
+            margin-top:3%;
+        }
+        &Texto {
+            font-size: 0.8rem;
+        }
+        a {
+            font-size: 1rem;
+            margin: 2%;
+        }
+    }
     .picadas {
-        
+
         h2 {
             font-size: 1.7rem;
-            text-align:left;
+            text-align: left;
             padding: 5%;
         }
 
@@ -187,19 +285,65 @@
 
     .cajas h2 {
         font-size: 1.7rem;
-        text-align:left;
+        text-align: left;
         padding: 5%;
-    
+
+    }
+    .historia {
+        &Texto {
+            p {
+                font-size: 1.1rem;
+            }
+            
+        }
+    }
+    .contacto {
+        .formularioP {
+            p {
+                font-size: 1.3rem
+            };
+        }
     }
     .footer {
         display: grid;
         grid-template-columns: 2fr 2fr;
-        grid-gap: 10%;
 
+        background-repeat: repeat;
         grid-template-areas:
             "footerMenu footerMenu"
             "newsletter newsletter"
             "datosUbicacion datosUbicacion";
+
+
+        &Menu {
+            padding-top: 4%;
+            margin-left: 0;
+        }
+
+        .newsletter {
+            padding: 5%;
+
+            p {
+                display: none;
+            }
+
+            #email {
+                width: 70vw;
+            }
+
+
+        }
+
+        .datosUbicacion {
+            #listaInfo {
+                li:last-child {
+                    display: none;
+                }
+
+
+
+            }
+        }
     }
 
 

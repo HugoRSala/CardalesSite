@@ -21,29 +21,106 @@ body {
 .navbar-nav li a:hover {
   transform: scale(1.03); }
 
-.flexLogoRedes {
-  display: flex; }
-  .flexLogoRedes ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    align-items: center;
-    margin: 0; }
-    .flexLogoRedes ul li {
-      padding: 5%; }
-      .flexLogoRedes ul li img {
-        height: 2rem;
-        width: 2rem; }
-
-.fotoInicio img {
-  width: 100vw; }
+.carouselMobile {
+  display: none; }
 
 .carrusel {
   width: 100%;
   margin: 0 auto; }
 
+.info {
+  margin-top: 2%;
+  width: 100%;
+  display: flex;
+  flex-direction: row; }
+  .info .mediosDePago, .info .zonasDeEntrega {
+    width: 50%;
+    text-align: center;
+    padding: 2%; }
+    .info .mediosDePago img, .info .zonasDeEntrega img {
+      width: 80px;
+      height: 80px; }
+    .info .mediosDePago p, .info .zonasDeEntrega p {
+      margin-bottom: 0; }
+
+.productos {
+  display: flex;
+  flex-direction: column; }
+  .productos .tituloProductos {
+    font-size: 10vw;
+    text-align: left;
+    padding: 0.3em;
+    background-color: #EAC136;
+    color: black;
+    margin-top: 2%; }
+  .productos .imagenesProductos {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .productos .imagenesProductos .contenedorImagenes {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      flex-wrap: wrap; }
+      .productos .imagenesProductos .contenedorImagenesFoto {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        border: solid 1px #e9e1e1;
+        padding: 2%;
+        margin: 2% 0; }
+        .productos .imagenesProductos .contenedorImagenesFoto:hover {
+          transform: scale(1.01);
+          transition: 1s; }
+        .productos .imagenesProductos .contenedorImagenesFoto h2 {
+          margin: 0;
+          padding-top: 0.4rem; }
+        .productos .imagenesProductos .contenedorImagenesFoto img {
+          width: 100%; }
+
+.eventos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  height: auto;
+  margin-bottom: 3%; }
+  .eventosTitulo {
+    width: 100%;
+    font-size: 10vw;
+    text-align: left;
+    padding: 0.3em;
+    background-color: #EAC136;
+    color: black;
+    margin-bottom: 2%; }
+  .eventosContainer {
+    width: 100%;
+    padding: 3% 3% 0 3%;
+    border: solid 1px #e9e1e1; }
+  .eventosImagen {
+    width: 100%; }
+    .eventosImagen img {
+      width: 100%; }
+  .eventosTexto {
+    padding-top: 2%;
+    width: 100%;
+    text-align: center; }
+    .eventosTexto p {
+      font-size: 1.2em;
+      margin-bottom: 0; }
+    .eventosTexto a {
+      margin: 2%; }
+
+.sombra {
+  box-shadow: 1px 3px 5px #c5bebe; }
+
 .picadas {
-  padding-top: 6%;
   display: flex;
   flex-direction: column; }
   .picadasMenu {
@@ -51,68 +128,41 @@ body {
     justify-content: space-between;
     display: flex;
     flex-direction: column; }
-    .picadasMenu h2 {
-      font-size: 2.5rem;
+    .picadasMenu .tituloPicadas {
+      font-size: 10vw;
       text-align: left;
-      padding: 4%;
-      margin: 5% 0;
-      background-image: url(../media/guardapizarra.png);
-      color: #f0f0f0; }
+      padding: 0.3em;
+      background-color: #EAC136;
+      color: black; }
     .picadasMenu label {
-      margin: 0 0 2% 2%;
+      margin: 2% 0 2% 2%;
       font-size: 1.5rem; }
 
-/* select picadas */
-.selectBox {
-  max-width: 250px;
-  position: relative; }
-  .selectBox select, .selectBox .formularioForm input, .formularioForm .selectBox input {
-    margin-left: 10%;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    display: inline-block;
-    width: 100%;
-    cursor: pointer;
-    padding: 7px 10px;
-    height: 42px;
-    outline: 0;
-    border: 0;
-    border-radius: 0;
-    background: #f0f0f0;
-    color: #7b7b7b;
-    font-size: 1em;
-    color: #999;
-    font-family: 'Quicksand', sans-serif;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    position: relative;
-    transition: all 0.25s ease; }
-  .selectBox i {
-    position: absolute;
-    right: 0px;
-    top: calc(50% - 13px);
-    width: 16px;
-    height: 16px;
-    display: block;
-    border-left: 4px solid #000000;
-    border-bottom: 4px solid #000000;
-    transform: rotate(-45deg);
-    /* Giramos el cuadrado */
-    transition: all 0.25s ease; }
-  .selectBox:hover i {
-    margin-top: 3px; }
-
-p {
-  padding: 3%;
-  font-size: 1.3rem; }
+.dropdown {
+  padding: 2% 0 2% 3%; }
 
 .fotosPicadas {
   padding-bottom: 3%;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center; }
+  .fotosPicadas .containerPicadas {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column; }
+    .fotosPicadas .containerPicadas .containerInterno {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center; }
+    .fotosPicadas .containerPicadas .containerTitulo {
+      width: 100%;
+      padding: 8% 0 2% 3%;
+      text-align: center; }
   .fotosPicadas article {
     padding: 1%;
     width: 50%;
@@ -132,32 +182,43 @@ p {
   100% {
     transform: scale(1); } }
 
-.cajas {
-  padding-top: 6%;
-  width: 100vw; }
-  .cajas h2 {
-    font-size: 2.5rem;
-    text-align: left;
-    padding: 4%;
-    margin: 5% 0;
-    background-image: url(../media/guardapizarra.png);
-    color: white; }
-  .cajas div {
-    width: 100vw;
-    height: auto;
+.card h5 {
+  font-size: 2rem; }
+
+#tablasChicas {
+  padding-top: 2%; }
+
+.tituloProductos {
+  font-size: 10vw;
+  text-align: left;
+  padding: 0.3em;
+  background-color: #EAC136;
+  color: black; }
+
+.containerBox {
+  display: flex;
+  width: 100%; }
+  .containerBox .containerFlexCajas {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 1%; }
-    .cajas div article {
-      align-content: flex-start;
-      margin-bottom: 3%;
-      padding: 1%; }
-  .cajas img {
-    width: 100%;
-    transition: transform 1s; }
-    .cajas img:hover {
-      transform: scale(1.02); }
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    .containerBox .containerFlexCajas .containerCajas {
+      display: flex;
+      width: 30rem;
+      min-width: 15rem;
+      margin: 3%;
+      flex-direction: column;
+      border-radius: 4px; }
+      .containerBox .containerFlexCajas .containerCajas .fotoCajas {
+        padding: 3%; }
+        .containerBox .containerFlexCajas .containerCajas .fotoCajas img {
+          width: 100%; }
+      .containerBox .containerFlexCajas .containerCajas .datosCajas {
+        padding: 3%; }
+        .containerBox .containerFlexCajas .containerCajas .datosCajas .contenidoCajas {
+          height: 17rem; }
 
 /* BOTON WHATSAPP */
 .btn-whatsapp {
@@ -173,80 +234,88 @@ p {
   text-align: center;
   z-index: 999; }
 
-.historia h1 {
-  width: 100%;
-  font-size: 2.5rem;
+.historiaTitulo {
+  font-size: 10vw;
   text-align: left;
-  padding: 4%;
-  margin: 2% 0 3% 0;
-  background-image: url(../media/guardapizarra.png);
-  color: white; }
+  padding: 0.3em;
+  background-color: #EAC136;
+  color: black; }
 
-.historiaTexto {
-  margin: 3%; }
-
-.historia img {
-  width: 100vw; }
-
-.historia h2 {
-  padding: 3% 0;
-  text-align: center;
-  font-size: 2rem; }
-
-.historia p {
-  margin-bottom: 3%;
-  padding: 3%;
-  font-size: 1.5rem; }
+.historiaContainer {
+  display: flex;
+  width: 100%;
+  padding: 2%;
+  flex-direction: column;
+  align-items: center; }
+  .historiaContainer img {
+    width: 100%;
+    padding: 4%; }
+  .historiaContainer h2 {
+    padding: 3% 0 0 3%; }
+  .historiaContainer p {
+    margin: 3%;
+    font-size: 1.3rem; }
 
 .contacto {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  margin-bottom: 2%;
-  align-items: center; }
-  .contacto h1 {
-    width: 100vw;
-    font-size: 2.5rem;
+  width: 100%;
+  margin-bottom: 2%; }
+  .contacto .tituloContacto {
+    font-size: 10vw;
     text-align: left;
-    padding: 4%;
-    background-image: url(../media/guardapizarra.png);
-    color: white; }
-
-.formulario {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start; }
-  .formularioP {
-    width: 100vw; }
-    .formularioP p {
+    padding: 0.3em;
+    background-color: #EAC136;
+    color: black; }
+  .contacto .formularioP {
+    width: 100%; }
+    .contacto .formularioP p {
+      text-align: center;
       font-size: 1.5rem;
-      padding: 3%; }
-  .formularioForm form {
+      padding: 4%;
+      margin: 0; }
+  .contacto .containerContacto {
     display: flex;
-    width: 90vw;
-    z-index: -1;
-    flex-direction: column;
-    align-items: flex-start; }
-  .formularioForm label {
-    display: flex;
-    width: 50%;
-    font-size: 2rem;
-    padding: 1% 0;
-    margin-left: 4%; }
-  .formularioForm select, .formularioForm input {
-    border-radius: 5px;
-    border: 1px solid black;
-    margin-left: 6%; }
-  .formularioForm input {
-    width: 60%;
-    height: 40px; }
-  .formularioForm textarea {
-    width: 80%;
-    height: 50%;
-    border-radius: 5px;
-    border: 1px solid black;
-    margin: 0 0 0.5rem 6%; }
+    flex-direction: row; }
+    .contacto .containerContacto .formulario {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 50%; }
+      .contacto .containerContacto .formularioForm {
+        width: 100%; }
+        .contacto .containerContacto .formularioForm form {
+          display: flex;
+          width: 90%;
+          z-index: -1;
+          flex-direction: column;
+          align-items: flex-start; }
+        .contacto .containerContacto .formularioForm label {
+          display: flex;
+          width: 50%;
+          font-size: 2rem;
+          padding: 1% 0;
+          margin-left: 4%; }
+        .contacto .containerContacto .formularioForm select, .contacto .containerContacto .formularioForm input {
+          border-radius: 5px;
+          border: 1px solid black;
+          margin-left: 6%; }
+        .contacto .containerContacto .formularioForm input {
+          width: 100%;
+          height: 40px; }
+        .contacto .containerContacto .formularioForm textarea {
+          width: 100%;
+          height: 50%;
+          border-radius: 5px;
+          border: 1px solid black;
+          margin: 0 0 0.5rem 6%; }
+    .contacto .containerContacto .containerIframe {
+      width: 50%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
 
 #botonSubmit {
   background-color: black;
@@ -261,22 +330,17 @@ p {
 .footer {
   background: white;
   background: linear-gradient(90deg, white 0%, #d8d5e6 35%, white 100%);
-  display: grid;
-  grid-template-columns: 2fr 2fr 3fr; }
-  .footer iframe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 3%;
-    padding: 1rem; }
+  display: flex;
+  justify-content: space-between; }
 
 .newsletter {
-  grid-column: 2/3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem; }
+  .newsletter h4 {
+    font-size: 1.4rem; }
   .newsletter div {
     display: flex;
     align-items: center; }
@@ -289,18 +353,16 @@ p {
     font-size: 0.9rem; }
 
 .footerMenu {
-  grid-row: 1/3;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: left;
-  list-style: none; }
-  .footerMenu a {
-    text-decoration: none;
-    font-size: 1.7rem;
-    font-weight: 500;
-    color: black;
-    padding: 1rem; }
+  align-items: center;
+  list-style: none;
+  margin-bottom: 0; }
+  .footerMenu img {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 0.2rem; }
 
 #listaInfo {
   display: flex;
@@ -317,61 +379,17 @@ p {
   display: flex;
   justify-content: flex-end; }
 
-@media screen and (max-width: 1150px) {
-  .header nav {
-    width: 40%;
-    margin-right: 10%; }
-  .footer iframe {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    margin-right: 3%;
-    padding: 1rem; } }
+#botonNews {
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  width: 5rem; }
 
-/* MEDIA QUERY 768PX */
-@media screen and (max-width: 768px) {
-  .header nav ul {
-    display: flex;
-    flex-wrap: wrap; }
-    .header nav ul li {
-      display: flex;
-      text-decoration: none;
-      margin-right: 2%; }
-      .header nav ul li a {
-        display: flex;
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: 500;
-        color: black;
-        align-content: flex-start; }
-  .picadas h2 {
-    font-size: 2.0rem;
-    text-align: center;
-    padding: 5%; }
-  .cajas h2 {
-    font-size: 2.0rem;
-    text-align: center;
-    padding: 5%; }
-  .tablaGrid {
-    justify-content: center;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 5rem); }
-  .gridItem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px black; }
+@media screen and (max-width: 1000px) {
   .footer {
     display: grid;
     grid-template-columns: 2fr 3fr;
     grid-template-areas: "footerMenu newsletter" "footerMenu newsletter" "datosUbicacion datosUbicacion"; }
-    .footer iframe {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      margin-right: 3%;
-      padding: 1rem; }
   .newsletter {
     grid-area: newsletter;
     display: flex;
@@ -392,10 +410,11 @@ p {
   .footerMenu {
     grid-area: footerMenu;
     display: flex;
-    flex-direction: column;
-    align-items: left;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    list-style: none; }
+    margin-bottom: 0;
+    padding-left: 0; }
     .footerMenu a {
       text-decoration: none;
       font-size: 1.7rem;
@@ -420,7 +439,109 @@ p {
     font-weight: 500;
     color: black; } }
 
+/* MEDIA QUERY 768PX */
+@media screen and (max-width: 768px) {
+  .carouselDesktop {
+    display: none; }
+  .carouselMobile {
+    display: block; }
+  .picadas h2 {
+    font-size: 2.0rem;
+    text-align: center;
+    padding: 5%; }
+  .cajas h2 {
+    font-size: 2.0rem;
+    text-align: center;
+    padding: 5%; }
+  .footer {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: "footerMenu footerMenu" "newsletter newsletter" "datosUbicacion datosUbicacion"; }
+  .newsletter {
+    grid-area: newsletter;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 5%; }
+    .newsletter div {
+      display: flex;
+      align-items: center; }
+    .newsletter input {
+      width: 20rem;
+      height: 1.5rem;
+      margin-left: 0.2rem; }
+    .newsletter p {
+      margin: 0.4rem;
+      font-size: 0.9rem; }
+  .footerMenu {
+    grid-area: footerMenu;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4% 0 0 0; }
+    .footerMenu a {
+      text-decoration: none;
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: black;
+      padding: 1rem; }
+  .datosUbicacion {
+    grid-area: datosUbicacion;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    .datosUbicacion li {
+      display: flex;
+      justify-content: space-around; }
+  #listaInfo {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: black; }
+  .contacto .containerContacto {
+    flex-direction: column;
+    width: 100%; }
+    .contacto .containerContacto .formulario {
+      width: 100%; }
+    .contacto .containerContacto .containerIframe {
+      width: 100%; }
+      .contacto .containerContacto .containerIframe iframe {
+        width: 100%;
+        padding: 5%; } }
+
 @media screen and (max-width: 520px) {
+  .info {
+    flex-direction: column; }
+    .info .mediosDePago, .info .zonasDeEntrega {
+      width: 100%;
+      margin: 4% 0; }
+      .info .mediosDePago p, .info .zonasDeEntrega p {
+        font-size: 1.2rem; }
+    .info .zonasDeEntrega {
+      width: 100%;
+      margin-bottom: 4%; }
+      .info .zonasDeEntrega p {
+        font-size: 1.2rem; }
+  .productos .tituloProductos {
+    margin: 4% 0 2% 0; }
+  .eventos {
+    margin-bottom: 3%; }
+    .eventosTitulo {
+      margin: 2% 0 1% 0; }
+    .eventosContainer {
+      margin-top: 3%; }
+    .eventosTexto {
+      font-size: 0.8rem; }
+    .eventos a {
+      font-size: 1rem;
+      margin: 2%; }
   .picadas h2 {
     font-size: 1.7rem;
     text-align: left;
@@ -431,8 +552,23 @@ p {
     font-size: 1.7rem;
     text-align: left;
     padding: 5%; }
+  .historiaTexto p {
+    font-size: 1.1rem; }
+  .contacto .formularioP p {
+    font-size: 1.3rem; }
   .footer {
     display: grid;
     grid-template-columns: 2fr 2fr;
-    grid-gap: 10%;
-    grid-template-areas: "footerMenu footerMenu" "newsletter newsletter" "datosUbicacion datosUbicacion"; } }
+    background-repeat: repeat;
+    grid-template-areas: "footerMenu footerMenu" "newsletter newsletter" "datosUbicacion datosUbicacion"; }
+    .footerMenu {
+      padding-top: 4%;
+      margin-left: 0; }
+    .footer .newsletter {
+      padding: 5%; }
+      .footer .newsletter p {
+        display: none; }
+      .footer .newsletter #email {
+        width: 70vw; }
+    .footer .datosUbicacion #listaInfo li:last-child {
+      display: none; } }
