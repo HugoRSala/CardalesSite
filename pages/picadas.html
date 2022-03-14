@@ -75,9 +75,9 @@
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#tablasChicas">Chicas (Comen 2| Pican 3)</a></li>
-                    <li><a class="dropdown-item" href="#tablasMedianas">Medianas (Comen 4| Pican 6)</a></li>
-                    <li><a class="dropdown-item" href="#tablasGrandes">Grandes (Comen 6| Pican 9)</a></li>
+                    <li><a id="chicas" class="dropdown-item" href="#tablasChicas">Chicas (Comen 2| Pican 3)</a></li>
+                    <li><a id="medianas" class="dropdown-item" href="#tablasMedianas">Medianas (Comen 4| Pican 6)</a></li>
+                    <li><a id="grandes" class="dropdown-item" href="#tablasGrandes">Grandes (Comen 6| Pican 9)</a></li>
                 </ul>
             </div>
 
@@ -86,9 +86,9 @@
 
 
         <!--Imagenes picadas-->
-        <div class="fotosPicadas">
-            <div class="containerPicadas">
-                <div class="containerTitulo" id="tablasChicas">
+        <div class="fotosPicadas" id="divPicadas">
+            <div class="containerPicadas" id="tablasChicas">
+                <div class="containerTitulo">
                     <h2>Chicas.</h2>
                     <h4>Tamaño Tabla: 15x40cm <br> Peso aprox: 600gr</h4>
                 </div>
@@ -139,8 +139,8 @@
                 </div>
 
             </div>
-            <div class="containerPicadas">
-                <div class="containerTitulo" id="tablasMedianas">
+            <div class="containerPicadas" id="tablasMedianas">
+                <div class="containerTitulo" >
                     <h2>Medianas.</h2>
                     <h4>Tamaño Tabla: 30x40cm <br> Peso aprox: 1100gr</h4>
                 </div>
@@ -296,6 +296,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
+
+        <script src="../js/scripts.js"></script>
 
 </body>
 

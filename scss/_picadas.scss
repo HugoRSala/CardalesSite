@@ -52,7 +52,7 @@
         }
         .containerTitulo {
             width: 100%;
-            padding: 8% 0 2% 3%;
+            padding: 2% 0 2% 3%;
             text-align: center;
            
             
@@ -97,4 +97,12 @@
 
 #tablasChicas {
     padding-top: 2%;
+}
+
+#tablasMedianas {
+    display: none;
+}
+
+#tablasGrandes {
+    display: none;
 }
