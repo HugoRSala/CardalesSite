@@ -1,7 +1,7 @@
 /* seccion picadas */
 
 .picadas {
-  
+
     display: flex;
     flex-direction: column;
 
@@ -15,12 +15,12 @@
             @include tituloSeccion;
         }
 
-        label{
+        label {
             margin: 2% 0 2% 2%;
             font-size: 1.5rem;
         }
     }
-    
+
 }
 
 
@@ -28,6 +28,16 @@
     padding: 2% 0 2% 3%;
 }
 
+.divProducto {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+span {
+    font-size: 1.8rem;
+}
 
 .fotosPicadas {
     padding-bottom: 3%;
@@ -50,14 +60,15 @@
             justify-content: center;
             align-items: center;
         }
+
         .containerTitulo {
             width: 100%;
             padding: 2% 0 2% 3%;
             text-align: center;
-           
-            
-            
-            
+
+
+
+
         }
     }
 
@@ -65,7 +76,7 @@
         padding: 1%;
         width: 50%;
         min-width: 55vh;
-        
+
     }
 
 }
@@ -76,13 +87,16 @@
     animation-timing-function: ease-in;
     animation-duration: 2s;
 }
+
 @keyframes aumento {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
@@ -92,6 +106,12 @@
 .card {
     h5 {
         font-size: 2rem;
+    }
+
+    &-title {
+        &::after {
+            content: "."
+        }
     }
 }
 
@@ -105,4 +125,85 @@
 
 #tablasGrandes {
     display: none;
+}
+
+.carrito {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    &Titulos {
+        display: flex;
+        flex-direction: row;
+
+        &1 {
+            width: 50%;
+
+            li {
+                list-style: none;
+            }
+        }
+
+        &2 {
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            justify-content: space-around;
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+    &TitulosA {
+        display: flex;
+        flex-direction: row;
+
+        &1 {
+            width: 50%;
+
+            li {
+                list-style: none;
+            }
+        }
+
+        &2 {
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            justify-content: space-around;
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+
+}
+
+.precios {
+    &::before {
+        content: "$ "
+    }
+
+    &::after {
+        content: ".00"
+    }
+}
+
+h6 {
+    display: none;
+}
+
+.borrarProducto {
+    button {
+        width: 1.8rem;
+        height: 1.8rem;
+        color: white;
+        background-color: black;
+    }
 }
