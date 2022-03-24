@@ -16,7 +16,6 @@ function agregar(e) {
     const productoPrecio = producto.querySelector('.precios').textContent;
     const productoTitulo = producto.querySelector('.card-title').textContent;
     const productoTamano = producto.querySelector('.tamano').textContent;
-    /* console.log(productoTitulo, productoPrecio, productoTamano); */
     agregarAlCarrito(productoTitulo, productoTamano, productoPrecio)
     sumarTotal()
     Toastify({
@@ -67,8 +66,7 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
     </div>
     `
 
-    let data = [productoTitulo, productoTamano, productoPrecio]
-    localStorage.setItem('pedido', JSON.stringify(data));
+    localStorage.setItem('elemento', nuevoElemento)
     const botonBorrar = nuevoElemento.querySelector('.borrarProducto')
     botonBorrar.addEventListener('click', borrarElemento);
 
@@ -76,40 +74,30 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
         const botonBorrar = e.target;
         const divABorrar = botonBorrar.closest('div')
         divABorrar.remove()
+        sumarTotal()
     }
   
-
-    
-
-    
-
-    
-    /* console.log(suma) */
-    /* console.log(total); */
-
-
     carrito.appendChild(nuevoElemento);
 }
-let suma=0
+
 function sumarTotal() {
-    
-    const carritoTotal = document.querySelector('carritoTotal');
+    let suma = 0
+    const carritoTotal = document.querySelector('.carritoTotal');
+  
 
     const carritoDiv = document.querySelectorAll('.carritoTitulos');
-    console.log(carritoDiv);
+   
     
     carritoDiv.forEach((carritoTitulos) => {
         const precios = carritoTitulos.querySelector('.valorTotal')
         const preciosFinales = parseInt(precios.innerText);
-        console.log(preciosFinales);
         const cantidad = carritoTitulos.querySelector('.productoCantidad');
         const cantidadFinal = parseInt(cantidad.innerText)
-        console.log(cantidadFinal);
         
         suma = suma + preciosFinales * cantidadFinal
-
-        console.log(suma);
+   
     });    
-    carritoTotal.innerText = `${suma}`
+    carritoTotal.innerText = `Total Pedido: $${suma}`
+  
 }
 
