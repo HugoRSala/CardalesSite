@@ -265,8 +265,16 @@ h6 {
 .carritoTotal {
   margin-left: 2rem;
   font-size: 1.3rem; }
-  .carritoTotal :before {
-    content: '$ '; }
+
+.montoFinal {
+  display: flex;
+  justify-content: space-evenly; }
+  .montoFinal .botonFinalizaCompra {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px; }
 
 /* seccion productos */
 .tituloProductos {

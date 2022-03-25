@@ -1,23 +1,31 @@
-//llamamos a los botones
+
 const total = []
+//llamamos al carrito
 const carrito = document.getElementById('carrito')
+//llamamos a los botones
 const botones = document.querySelectorAll('.btnjs')
-//por cada boton clickeado ejecutamos llamada boton
+//por cada boton clickeado ejecutamos llamadaBoton
 botones.forEach(llamadaBoton => {
     //le agregamos un eventlistener
     llamadaBoton.addEventListener('click', agregar)
 })
 
-//la funcion previene el default del 'a'
 function agregar(e) {
+    //la funcion previene el default del 'a'
     e.preventDefault()
+    //el target nos marca el div donde se encuentra el event
     const eventCont = e.target
+    //producto nos va a ir 2 divs arriba en la anidación
     const producto = eventCont.closest('div div')
+    //buscamos los titulos, precios y tamnaños
     const productoPrecio = producto.querySelector('.precios').textContent;
     const productoTitulo = producto.querySelector('.card-title').textContent;
     const productoTamano = producto.querySelector('.tamano').textContent;
+    //ejecutamos una función con parametros estos 3 valores
     agregarAlCarrito(productoTitulo, productoTamano, productoPrecio)
+    //función de suma para el total
     sumarTotal()
+    //toastify para alertar de ingreso de elemento
     Toastify({
         text: "Agregaste un producto",
         duration: 2500,
@@ -37,25 +45,26 @@ function agregar(e) {
 
 
 function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
-    //traigo los elementos que tengan clase productoTituloPrecio
-    
-    const productoTituloPrecio = carrito.getElementsByClassName('productoTituloPrecio')
-    for (i = 0; i < productoTituloPrecio.length; i++) {
-        if (productoTituloPrecio[i].innerText === `${productoTitulo} ${productoTamano}`) {
-            
-            let cantidadElementosAcumulados = (productoTituloPrecio[i].parentElement.parentElement.querySelector('.productoCantidad'));
+    //primero buscamos si al agregar no hay ya un elemento con el mismo titulo asi no crea otro div con el mismo nombre y le suma la cantidad
+    const productoTituloTamano = carrito.getElementsByClassName('productoTituloTamano')
+    //hacemos un bucle for con el length de productoTituloTamano (aloja el titulo y tamaño del item seleccionado)
+    for (i = 0; i < productoTituloTamano.length; i++) {
+        //si el texto de esa variable es estrictamente igual al producto y tamaño nuevos
+        if (productoTituloTamano[i].innerText === `${productoTitulo} ${productoTamano}`) {
+            //busca la cantidad y le suma 1
+            let cantidadElementosAcumulados = (productoTituloTamano[i].parentElement.parentElement.querySelector('.productoCantidad'));
             cantidadElementosAcumulados.innerHTML++
-            
+            //y devuelve, ya no sigue la función
             return 
         }
 
     }
-    
+    //si no hay un elemento con esa caracteristica crea un div
     const nuevoElemento = document.createElement('div')
     nuevoElemento.innerHTML = `
     <div class="carritoTitulos">
         <ul class="carritoTitulos1 lista">
-            <li class="productoTituloPrecio">${productoTitulo} ${productoTamano}</li>
+            <li class="productoTituloTamano">${productoTitulo} ${productoTamano}</li>
         </ul>
         <ul class="carritoTitulos2 lista">
             
@@ -65,8 +74,14 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
         </ul>
     </div>
     `
-
-    localStorage.setItem('elemento', nuevoElemento)
+    
+    
+   
+    /* const nuevoElementoText = nuevoElemento.innerHTML
+    localStorage.setItem('nuevoElemento', nuevoElementoText) */
+    
+   
+    //borrar item
     const botonBorrar = nuevoElemento.querySelector('.borrarProducto')
     botonBorrar.addEventListener('click', borrarElemento);
 
@@ -74,12 +89,17 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
         const botonBorrar = e.target;
         const divABorrar = botonBorrar.closest('div')
         divABorrar.remove()
+        //aplicamos la funcion de la suma al total para que actualice el precio al borrar el item
         sumarTotal()
     }
-  
+    //agregamos al html el nuevo elemento
     carrito.appendChild(nuevoElemento);
+    
+   
+    
 }
 
+//funcion de suma al total
 function sumarTotal() {
     let suma = 0
     const carritoTotal = document.querySelector('.carritoTotal');
