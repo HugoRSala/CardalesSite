@@ -69,20 +69,28 @@
 
 
             <!--Selector tamaño-->
+            <div class="picadasMenuTitulos">
+                <div class="dropdown">
+                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Seleccione Tamaño
+                    </a>
 
-            <div class="dropdown">
-                <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Seleccione Tamaño
-                </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a id="chicas" class="dropdown-item" href="#tablasChicas">Chicas (Comen 2| Pican 3)</a></li>
+                        <li><a id="medianas" class="dropdown-item" href="#tablasMedianas">Medianas (Comen 4| Pican
+                                6)</a>
+                        </li>
+                        <li><a id="grandes" class="dropdown-item" href="#tablasGrandes">Grandes (Comen 6| Pican 9)</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="botonCarrito">
+                    <button id="btnCarrito">carrito</button>
+                </div>
 
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a id="chicas" class="dropdown-item" href="#tablasChicas">Chicas (Comen 2| Pican 3)</a></li>
-                    <li><a id="medianas" class="dropdown-item" href="#tablasMedianas">Medianas (Comen 4| Pican 6)</a>
-                    </li>
-                    <li><a id="grandes" class="dropdown-item" href="#tablasGrandes">Grandes (Comen 6| Pican 9)</a></li>
-                </ul>
             </div>
+
 
 
         </div>
@@ -305,25 +313,27 @@
                 </div>
             </div>
         </div>
+        <div id="shopCart" class="shopCart">
+            <div id="carrito" class="carrito">
+                <h3>Tu pedido</h3>
+                <button id="cerrarCarrito" class="cerrarCarrito">x</button>
+                <div class="carritoTitulosA">
+                    <ul class="carritoTitulos1 lista">
+                        <li class="productoTituloPrecio">ITEM</li>
+                    </ul>
+                    <ul class="carritoTitulos2 lista">
 
-        <div id="carrito" class="carrito">
-            <h3>Tu pedido</h3>
-            <div class="carritoTitulosA">
-                <ul class="carritoTitulos1 lista">
-                    <li class="productoTituloPrecio">ITEM</li>
-                </ul>
-                <ul class="carritoTitulos2 lista">
-
-                    <li class="productoCantidad">CANT</li>
-                    <li class="valorTotal">PRECIO</li>
-                    <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
-                </ul>
+                        <li class="productoCantidad">CANT</li>
+                        <li class="valorTotal">PRECIO</li>
+                        <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="montoFinal">
-            <span class="carritoTotal">Total Pedido: $0 </span>
-            <button class="botonFinalizaCompra">Finalizar Compra</button>
-            
+            <div class="montoFinal">
+                <span class="carritoTotal">Total Pedido: $0 </span>
+                <button class="botonFinalizaCompra">Finalizar Compra</button>
+
+            </div>
         </div>
         <!-- BOTON WHATSAPP -->
 

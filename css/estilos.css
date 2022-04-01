@@ -144,6 +144,11 @@ body {
     .picadasMenu label {
       margin: 2% 0 2% 2%;
       font-size: 1.5rem; }
+    .picadasMenuTitulos {
+      display: flex;
+      justify-content: space-between; }
+      .picadasMenuTitulos .botonCarrito {
+        margin: 2%; }
 
 .dropdown {
   padding: 2% 0 2% 3%; }
@@ -218,6 +223,10 @@ span {
   .carrito h3 {
     width: 100%;
     text-align: center; }
+  .carrito .cerrarCarrito {
+    position: absolute;
+    top: 2px;
+    right: 2px; }
   .carritoTitulos {
     display: flex;
     flex-direction: row; }
@@ -275,6 +284,17 @@ h6 {
     border: none;
     border-radius: 5px;
     padding: 8px; }
+
+.shopCart {
+  display: none;
+  position: fixed;
+  background-color: white;
+  width: 80%;
+  height: 50vh;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 10px, 5px, 5px black;
+  -webkit-box-shadow: 10px, 5px, 5px black; }
 
 /* seccion productos */
 .tituloProductos {

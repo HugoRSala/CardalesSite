@@ -54,6 +54,7 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
             //busca la cantidad y le suma 1
             let cantidadElementosAcumulados = (productoTituloTamano[i].parentElement.parentElement.querySelector('.productoCantidad'));
             cantidadElementosAcumulados.innerHTML++
+
             //y devuelve, ya no sigue la función
             return 
         }
@@ -61,7 +62,8 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
     }
     //si no hay un elemento con esa caracteristica crea un div
     const nuevoElemento = document.createElement('div')
-    nuevoElemento.innerHTML = `
+    
+    let contenidoDiv = `
     <div class="carritoTitulos">
         <ul class="carritoTitulos1 lista">
             <li class="productoTituloTamano">${productoTitulo} ${productoTamano}</li>
@@ -74,6 +76,17 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
         </ul>
     </div>
     `
+    //aca hice 250 pruebas distintas
+    const elementosGuardados = []
+    nuevoElemento.innerHTML = contenidoDiv
+    elementosGuardados.push(contenidoDiv)
+    console.log(elementosGuardados);
+    elementosGuardados.forEach(e => {
+    localStorage.setItem('itemNuevo',e)   
+       
+   });
+   
+    /* localStorage.setItem('nuevoElemento', contenidoDiv) */
     
     
    
@@ -121,3 +134,13 @@ function sumarTotal() {
   
 }
 
+const botonCarrito = document.getElementById('btnCarrito')
+const carritoContenedor = document.getElementById ('shopCart')
+botonCarrito.addEventListener('click', ()=> {
+ carritoContenedor.style.display="block"
+})
+
+const botonCerrarCarrito = document.getElementById('cerrarCarrito')
+botonCerrarCarrito.addEventListener('click', ()=>{
+    carritoContenedor.style.display="none";
+})
