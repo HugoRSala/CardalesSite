@@ -1,0 +1,68 @@
+[
+    {
+        "nombre": "Chacarera",
+        "cantidad": 1,
+        "tamaño": "Chica",
+        "precio": 1900
+    },
+    {
+        "nombre": "Chacarera",
+        "cantidad": 1,
+        "tamaño": "Mediana",
+        "precio": 3200
+    },
+    {
+        "nombre": "Chacarera",
+        "cantidad": 1,
+        "tamaño": "Grande",
+        "precio": 4500
+    },
+    {
+        "nombre": "Malambo",
+        "cantidad": 1,
+        "tamaño": "Chica",
+        "precio": 1900
+    },
+    {
+        "nombre": "Malambo",
+        "cantidad": 1,
+        "tamaño": "Mediana",
+        "precio": 3200
+    },
+    {
+        "nombre": "Malambo",
+        "cantidad": 1,
+        "tamaño": "Grande",
+        "precio": 4500
+    },
+    {
+        "nombre": "Milonga",
+        "cantidad": 1,
+        "tamaño": "Chica",
+        "precio": 1900
+    },
+    {
+        "nombre": "Milonga",
+        "cantidad": 1,
+        "tamaño": "Mediana",
+        "precio": 3200
+    },
+    {
+        "nombre": "Milonga",
+        "cantidad": 1,
+        "tamaño": "Grande",
+        "precio": 4500
+    },
+    {
+        "nombre": "Carnavalito",
+        "cantidad": 1,
+        "tamaño": "Chica",
+        "precio": 1900
+    },
+    {
+        "nombre": "Carnavalito",
+        "cantidad": 1,
+        "tamaño": "Mediana",
+        "precio": 3200
+    }
+]

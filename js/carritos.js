@@ -1,5 +1,14 @@
 
+const URL = '../js/api.json'
+
+fetch(URL)
+    .then(response => response.json())
+    .then(data=> {
+        console.log(data);
+    })
+
 const total = []
+const elementosCreados = []
 //llamamos al carrito
 const carrito = document.getElementById('carrito')
 //llamamos a los botones
@@ -45,6 +54,9 @@ function agregar(e) {
 
 
 function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
+ /*    if (localStorage.getItem('elemento') != null) {
+        carrito.appendChild(elementosCreados.innerHTML)
+    } */
     //primero buscamos si al agregar no hay ya un elemento con el mismo titulo asi no crea otro div con el mismo nombre y le suma la cantidad
     const productoTituloTamano = carrito.getElementsByClassName('productoTituloTamano')
     //hacemos un bucle for con el length de productoTituloTamano (aloja el titulo y tamaño del item seleccionado)
@@ -54,6 +66,8 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
             //busca la cantidad y le suma 1
             let cantidadElementosAcumulados = (productoTituloTamano[i].parentElement.parentElement.querySelector('.productoCantidad'));
             cantidadElementosAcumulados.innerHTML++
+            
+            localStorage.setItem('elemento', elementosCreados)
 
             //y devuelve, ya no sigue la función
             return 
@@ -63,7 +77,7 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
     //si no hay un elemento con esa caracteristica crea un div
     const nuevoElemento = document.createElement('div')
     
-    let contenidoDiv = `
+    nuevoElemento.innerHTML = `
     <div class="carritoTitulos">
         <ul class="carritoTitulos1 lista">
             <li class="productoTituloTamano">${productoTitulo} ${productoTamano}</li>
@@ -76,24 +90,11 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
         </ul>
     </div>
     `
-    //aca hice 250 pruebas distintas
-    const elementosGuardados = []
-    nuevoElemento.innerHTML = contenidoDiv
-    elementosGuardados.push(contenidoDiv)
-    console.log(elementosGuardados);
-    elementosGuardados.forEach(e => {
-    localStorage.setItem('itemNuevo',e)   
-       
-   });
-   
-    /* localStorage.setItem('nuevoElemento', contenidoDiv) */
+    elementosCreados.push(nuevoElemento.innerHTML)
     
-    
-   
-    /* const nuevoElementoText = nuevoElemento.innerHTML
-    localStorage.setItem('nuevoElemento', nuevoElementoText) */
-    
-   
+    localStorage.setItem('elemento', elementosCreados)
+  
+
     //borrar item
     const botonBorrar = nuevoElemento.querySelector('.borrarProducto')
     botonBorrar.addEventListener('click', borrarElemento);
@@ -102,8 +103,11 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
         const botonBorrar = e.target;
         const divABorrar = botonBorrar.closest('div')
         divABorrar.remove()
+        elementosCreados.pop()
+        localStorage.setItem('elemento', elementosCreados)
         //aplicamos la funcion de la suma al total para que actualice el precio al borrar el item
         sumarTotal()
+
     }
     //agregamos al html el nuevo elemento
     carrito.appendChild(nuevoElemento);
@@ -111,6 +115,7 @@ function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
    
     
 }
+console.log(elementosCreados);
 
 //funcion de suma al total
 function sumarTotal() {
