@@ -1,5 +1,43 @@
 /* seccion picadas */
 
+.botonCarrito {
+    display: flex;
+    width: 3.7rem;
+    gap: 2px;
+
+    #carritoCondicion {
+        position: relative;
+        right: 0;
+
+        width: 15px;
+        height: 15px;
+        visibility: hidden;
+
+    }
+
+    button {
+        /* border-radius: 4px; */
+        border: none;
+
+        :hover {
+            box-shadow: 0.5px 0.5px 0.2px rgb(187, 186, 186);
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+            border: none;
+        }
+
+    }
+
+
+
+
+
+}
+
+
 .picadas {
 
     display: flex;
@@ -10,6 +48,7 @@
         justify-content: space-between;
         display: flex;
         flex-direction: column;
+        margin-bottom: 2rem;
 
         .tituloPicadas {
             @include tituloSeccion;
@@ -19,15 +58,12 @@
             margin: 2% 0 2% 2%;
             font-size: 1.5rem;
         }
+
         &Titulos {
             display: flex;
             justify-content: space-between;
-            .botonCarrito {
-                margin: 2%;
-              
-                
-            }
-         
+
+
         }
     }
 
@@ -54,7 +90,7 @@ span {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     .containerPicadas {
@@ -114,6 +150,8 @@ span {
 
 
 .card {
+    margin-bottom: 1rem;
+
     h5 {
         font-size: 2rem;
     }
@@ -145,11 +183,13 @@ span {
         width: 100%;
         text-align: center;
     }
+
     .cerrarCarrito {
         position: absolute;
         top: 2px;
         right: 2px;
     }
+
     &Titulos {
         display: flex;
         flex-direction: row;
@@ -173,6 +213,7 @@ span {
             }
         }
     }
+
     &TitulosA {
         display: flex;
         flex-direction: row;
@@ -214,41 +255,73 @@ h6 {
 }
 
 .borrarProducto {
-    button {
-        width: 1.8rem;
-        height: 1.8rem;
-        color: white;
-        background-color: black;
-    }
+
+    width: 1.8rem;
+    height: 1.8rem;
+    color: white;
+    background-color: red;
+    border-radius: 4px;
+    border: white 0.2px solid;
+    box-shadow: 0.5px 0.5px 0.2px rgb(187, 186, 186);
+
+
 }
+
 .carritoTotal {
     margin-left: 2rem;
     font-size: 1.3rem;
-    
-  
+
+
 }
+
 .montoFinal {
     display: flex;
     justify-content: space-evenly;
-    
+
     .botonFinalizaCompra {
         background-color: black;
         color: white;
-        border: none;  
+        border: none;
         border-radius: 5px;
-        padding: 8px; 
+        padding: 8px;
     }
 }
 
-.shopCart {
-    display: none; 
-    position: fixed;
-    background-color: white;
-    width: 40%;
+.carrocarro {
+    width: 100%;
     height: 100%;
-    border: 1px solid black;
-    border-radius: 8px;
-    box-shadow: 10px, 5px, 5px black;
-    -webkit-box-shadow:  10px, 5px, 5px black;
+    z-index: 1;
+    
+    .shopCart {
+        z-index: 4;
+        visibility: hidden;
+        position: fixed;
+        background-color: white;
+        width: 45%;
+        height: 100%;
+        border: 1px solid black;
+        border-radius: 8px;
+        box-shadow: 10px, 5px, 5px black;
+        -webkit-box-shadow: 10px, 5px, 5px black;
+        transform: translateX(0);
+       
+
+        .cerrarCarrito {
+            width: 1.8rem;
+            height: 1.8rem;
+            color: white;
+            background-color: black;
+            border-radius: 4px;
+            border: white 0.2px solid;
+            box-shadow: 0.5px 0.5px 0.2px rgb(187, 186, 186);
+        }
+
+    }
+
 
 }
+.ocultarCarrito {
+    visibility: hidden;
+    transition: 2s linear;
+}
+

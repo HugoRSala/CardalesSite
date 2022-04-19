@@ -1,68 +1,90 @@
 [
     {
-        "nombre": "Chacarera",
-        "cantidad": 1,
-        "tamaño": "Chica",
-        "precio": 1900
+        "name": "Chacarera",
+        "id": 1,
+        "quantity": 1,
+        "size": "Chica",
+        "image": "../media/Picada_18c.jpg",
+        "price": 1900
     },
     {
-        "nombre": "Chacarera",
-        "cantidad": 1,
-        "tamaño": "Mediana",
-        "precio": 3200
+        "name": "Chacarera",
+        "id": 2,
+        "quantity": 1,
+        "size": "Mediana",
+        "image": "../media/chaca4.jpg",
+        "price": 3200
     },
     {
-        "nombre": "Chacarera",
-        "cantidad": 1,
-        "tamaño": "Grande",
-        "precio": 4500
+        "name": "Chacarera",
+        "id": 3,
+        "quantity": 1,
+        "size": "Grande",
+        "image": "../media/chaca6.jpg",
+        "price": 4500
     },
     {
-        "nombre": "Malambo",
-        "cantidad": 1,
-        "tamaño": "Chica",
-        "precio": 1900
+        "name": "Malambo",
+        "id": 4,
+        "quantity": 1,
+        "size": "Chica",
+        "image": "../media/Picada_22c.jpg",
+        "price": 1900
     },
     {
-        "nombre": "Malambo",
-        "cantidad": 1,
-        "tamaño": "Mediana",
-        "precio": 3200
+        "name": "Malambo",
+        "id": 5,
+        "quantity": 1,
+        "size": "Mediana",
+        "image": "../media/malambo4.jpg",
+        "price": 3200
     },
     {
-        "nombre": "Malambo",
-        "cantidad": 1,
-        "tamaño": "Grande",
-        "precio": 4500
+        "name": "Malambo",
+        "id": 6,
+        "quantity": 1,
+        "size": "Grande",
+        "image": "../media/malambo6.jpg",
+        "price": 4500
     },
     {
-        "nombre": "Milonga",
-        "cantidad": 1,
-        "tamaño": "Chica",
-        "precio": 1900
+        "name": "Milonga",
+        "id": 7,
+        "quantity": 1,
+        "size": "Chica",
+        "image": "../media/Picada_31c.jpg",
+        "price": 1900
     },
     {
-        "nombre": "Milonga",
-        "cantidad": 1,
-        "tamaño": "Mediana",
-        "precio": 3200
+        "name": "Milonga",
+        "id": 8,
+        "quantity": 1,
+        "size": "Mediana",
+        "image": "../media/milonga4.jpg",
+        "price": 3200
     },
     {
-        "nombre": "Milonga",
-        "cantidad": 1,
-        "tamaño": "Grande",
-        "precio": 4500
+        "name": "Milonga",
+        "id": 9,
+        "quantity": 1,
+        "size": "Grande",
+        "image": "../media/milonga6.jpg",
+        "price": 4500
     },
     {
-        "nombre": "Carnavalito",
-        "cantidad": 1,
-        "tamaño": "Chica",
-        "precio": 1900
+        "name": "Carnavalito",
+        "id": 10,
+        "quantity": 1,
+        "size": "Chica",
+        "image": "../media/Picada_12c.jpg",
+        "price": 1900
     },
     {
-        "nombre": "Carnavalito",
-        "cantidad": 1,
-        "tamaño": "Mediana",
-        "precio": 3200
+        "name": "Carnavalito",
+        "id": 11,
+        "quantity": 1,
+        "size": "Mediana",
+        "image": "../media/carnava4.jpg",
+        "price": 3200
     }
 ]

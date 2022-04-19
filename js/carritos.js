@@ -1,40 +1,96 @@
-
-const URL = '../js/api.json'
-
-fetch(URL)
-    .then(response => response.json())
-    .then(data=> {
-        console.log(data);
-    })
-
+const cajaCarrito = document.getElementById('carrito2')
+const contenedorPicadas = document.getElementById('contenedorPicadas')
+const templateCarrito = document.getElementById('templateCarrito').content
+const fragment = document.createDocumentFragment()
 const total = []
-const elementosCreados = []
+const carritoCondicion = document.getElementById('carritoCondicion')
 //llamamos al carrito
 const carrito = document.getElementById('carrito')
 //llamamos a los botones
-const botones = document.querySelectorAll('.btnjs')
+const botones = document.querySelector('.btnjs')
 //por cada boton clickeado ejecutamos llamadaBoton
-botones.forEach(llamadaBoton => {
-    //le agregamos un eventlistener
-    llamadaBoton.addEventListener('click', agregar)
+
+const URL = '../js/api.json'
+
+let carritoFinal = {}
+document.addEventListener('DOMContentLoaded', () => {
+    traerData()
+    if (localStorage.getItem('elementosGuardados')) {
+        carritoFinal = JSON.parse(localStorage.getItem('elementosGuardados'))
+        agregarAlCarrito()
+        /*   contarElementosCarrito() */
+    }
 })
 
-function agregar(e) {
-    //la funcion previene el default del 'a'
+
+
+const traerData = async () => {
+    try {
+        await fetch(URL)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(e => {
+                    agregarAlDom(e);
+                });
+            })
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+contenedorPicadas.addEventListener('click', e => {
     e.preventDefault()
-    //el target nos marca el div donde se encuentra el event
-    const eventCont = e.target
-    //producto nos va a ir 2 divs arriba en la anidación
-    const producto = eventCont.closest('div div')
-    //buscamos los titulos, precios y tamnaños
-    const productoPrecio = producto.querySelector('.precios').textContent;
-    const productoTitulo = producto.querySelector('.card-title').textContent;
-    const productoTamano = producto.querySelector('.tamano').textContent;
-    //ejecutamos una función con parametros estos 3 valores
-    agregarAlCarrito(productoTitulo, productoTamano, productoPrecio)
-    //función de suma para el total
-    sumarTotal()
-    //toastify para alertar de ingreso de elemento
+    agregar(e)
+})
+
+cajaCarrito.addEventListener('click', e => {
+    borraElemento(e)
+})
+
+function agregarAlDom(e) {
+    const elementoAAgregar = document.createElement('div')
+
+    elementoAAgregar.innerHTML = `
+<div class="card" style="width: 30rem;">
+  <img src="${e.image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${e.name} ${e.size}</h5>
+    <p class="card-text">${e.price}</p>
+    <a href="#" data-id=${e.id} class="btnjs btn btn-dark">Comprar</a>
+  </div>
+</div>`
+
+    contenedorPicadas.appendChild(elementoAAgregar)
+
+
+}
+
+
+
+
+function agregar(e) {
+    if (e.target.classList.contains('btnjs')) {
+        agregandoAlCarrito(e.target.parentElement);
+    }
+
+}
+const agregandoAlCarrito = obj => {
+    const productoFinal = {
+        id: obj.querySelector('.btnjs').dataset.id,
+        nombre: obj.querySelector('h5').textContent,
+        precio: obj.querySelector('p').textContent,
+        cantidad: 1,
+
+    }
+    if (carritoFinal.hasOwnProperty(productoFinal.id)) {
+        productoFinal.cantidad = carritoFinal[productoFinal.id].cantidad + 1
+
+    }
+
+    carritoFinal[productoFinal.id] = { ...productoFinal }
+    agregarAlCarrito()
     Toastify({
         text: "Agregaste un producto",
         duration: 2500,
@@ -50,102 +106,85 @@ function agregar(e) {
 
 
     }).showToast();
+
 }
 
 
-function agregarAlCarrito(productoTitulo, productoTamano, productoPrecio) {
- /*    if (localStorage.getItem('elemento') != null) {
-        carrito.appendChild(elementosCreados.innerHTML)
-    } */
-    //primero buscamos si al agregar no hay ya un elemento con el mismo titulo asi no crea otro div con el mismo nombre y le suma la cantidad
-    const productoTituloTamano = carrito.getElementsByClassName('productoTituloTamano')
-    //hacemos un bucle for con el length de productoTituloTamano (aloja el titulo y tamaño del item seleccionado)
-    for (i = 0; i < productoTituloTamano.length; i++) {
-        //si el texto de esa variable es estrictamente igual al producto y tamaño nuevos
-        if (productoTituloTamano[i].innerText === `${productoTitulo} ${productoTamano}`) {
-            //busca la cantidad y le suma 1
-            let cantidadElementosAcumulados = (productoTituloTamano[i].parentElement.parentElement.querySelector('.productoCantidad'));
-            cantidadElementosAcumulados.innerHTML++
-            
-            localStorage.setItem('elemento', elementosCreados)
 
-            //y devuelve, ya no sigue la función
-            return 
-        }
+const agregarAlCarrito = () => {
+    //no se puede modificar un objeto, solo los valores
+    cajaCarrito.innerHTML = '';
+    Object.values(carritoFinal).forEach(elemento => {
+        templateCarrito.querySelector('.borrarProducto').dataset.id = elemento.id
+        templateCarrito.querySelector('.productoTituloTamano').textContent = elemento.nombre;
+        templateCarrito.querySelector('.productoCantidad').textContent = parseInt(elemento.cantidad);
+        templateCarrito.querySelector('.valorTotal').textContent = parseInt(elemento.precio * elemento.cantidad)
+        const clonar = templateCarrito.cloneNode(true)
+        fragment.appendChild(clonar)
 
+
+    })
+    cajaCarrito.appendChild(fragment)
+
+    sumaTotal()
+    sumaItemsCarrito()
+    /* contarElementosCarrito() */
+    localStorage.setItem('elementosGuardados', JSON.stringify(carritoFinal))
+}
+
+
+const sumaTotal = () => {
+    const totalPrecios = Object.values(carritoFinal).reduce((suma, { cantidad, precio }) => suma + cantidad * precio, 0)
+    const precioFinal = document.querySelector('.carritoTotal');
+    precioFinal.innerHTML = `Total: $${totalPrecios}`
+
+}
+
+const borraElemento = e => {
+    /* console.log(e.target); */
+    if (e.target.classList.contains('borrarProducto')) {
+        delete carritoFinal[e.target.dataset.id]
     }
-    //si no hay un elemento con esa caracteristica crea un div
-    const nuevoElemento = document.createElement('div')
-    
-    nuevoElemento.innerHTML = `
-    <div class="carritoTitulos">
-        <ul class="carritoTitulos1 lista">
-            <li class="productoTituloTamano">${productoTitulo} ${productoTamano}</li>
-        </ul>
-        <ul class="carritoTitulos2 lista">
-            
-            <li class="productoCantidad">1</li>
-            <li class="valorTotal">${productoPrecio}</li>
-            <li class="borrarProducto"><button>x</button></li>
-        </ul>
-    </div>
-    `
-    elementosCreados.push(nuevoElemento.innerHTML)
-    
-    localStorage.setItem('elemento', elementosCreados)
-  
-
-    //borrar item
-    const botonBorrar = nuevoElemento.querySelector('.borrarProducto')
-    botonBorrar.addEventListener('click', borrarElemento);
-
-    function borrarElemento(e) {
-        const botonBorrar = e.target;
-        const divABorrar = botonBorrar.closest('div')
-        divABorrar.remove()
-        elementosCreados.pop()
-        localStorage.setItem('elemento', elementosCreados)
-        //aplicamos la funcion de la suma al total para que actualice el precio al borrar el item
-        sumarTotal()
-
-    }
-    //agregamos al html el nuevo elemento
-    carrito.appendChild(nuevoElemento);
-    
-   
-    
-}
-console.log(elementosCreados);
-
-//funcion de suma al total
-function sumarTotal() {
-    let suma = 0
-    const carritoTotal = document.querySelector('.carritoTotal');
-  
-
-    const carritoDiv = document.querySelectorAll('.carritoTitulos');
-   
-    
-    carritoDiv.forEach((carritoTitulos) => {
-        const precios = carritoTitulos.querySelector('.valorTotal')
-        const preciosFinales = parseInt(precios.innerText);
-        const cantidad = carritoTitulos.querySelector('.productoCantidad');
-        const cantidadFinal = parseInt(cantidad.innerText)
-        
-        suma = suma + preciosFinales * cantidadFinal
-   
-    });    
-    carritoTotal.innerText = `Total Pedido: $${suma}`
-  
+    agregarAlCarrito()
+    /* contarElementosCarrito() */
 }
 
-const botonCarrito = document.getElementById('btnCarrito')
-const carritoContenedor = document.getElementById ('shopCart')
-botonCarrito.addEventListener('click', ()=> {
- carritoContenedor.style.display="block"
+
+
+const botonAbrirCarrito = document.getElementById('btnCarrito')
+const containerCarrito = document.getElementById('shopCart')
+botonAbrirCarrito.addEventListener('click', () => {
+    containerCarrito.style.visibility = "visible"
 })
 
 const botonCerrarCarrito = document.getElementById('cerrarCarrito')
-botonCerrarCarrito.addEventListener('click', ()=>{
-    carritoContenedor.style.display="none";
+botonCerrarCarrito.addEventListener('click', () => {
+    containerCarrito.style.visibility = "hidden";
+})
+
+const sumaItemsCarrito = () => {
+    Object.keys(carritoFinal).length > 0 ?
+        carritoCondicion.style.visibility = "visible" :
+        carritoCondicion.style.visibility = "hidden";
+
+}
+
+const botonFinalizar = document.getElementById('botonFinalizarCompra')
+botonFinalizar.addEventListener('click', () => {
+    if (Object.keys(carritoFinal).length > 0) {
+        carritoFinal = {}
+        agregarAlCarrito()
+        containerCarrito.style.visibility = "hidden";
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Muchas gracias por su compra!',
+            showConfirmButton: false,
+            timer: 2000
+          })
+        
+
+    }
+
+
 })

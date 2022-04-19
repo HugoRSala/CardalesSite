@@ -23,12 +23,58 @@
 </head>
 
 <body>
+    <div class="carrocarro">
+        <div id="shopCart" class="shopCart">
+            <div id="carrito" class="carrito">
+                <h3>Tu pedido</h3>
+                <button id="cerrarCarrito" class="cerrarCarrito">x</button>
+                <div class="carritoTitulosA">
+                    <ul class="carritoTitulos1 lista">
+                        <li class="productoTituloPrecio">ITEM</li>
+                    </ul>
+                    <ul class="carritoTitulos2 lista">
+
+                        <li class="productoCantidad">CANT</li>
+                        <li class="valorTotal">PRECIO</li>
+                        <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+                    </ul>
+                </div>
+            </div>
+            <template id="templateCarrito">
+                <div class="carritoTitulos">
+                    <ul class="carritoTitulos1 lista">
+                        <li class="productoTituloTamano"></li>
+                    </ul>
+                    <ul class="carritoTitulos2 lista">
+
+                        <li class="productoCantidad">1</li>
+                        <li class="valorTotal"></li>
+                        <button class="borrarProducto">x</button>
+                    </ul>
+                </div>
+            </template>
+            <div id="carrito2" class="carrito2">
+
+            </div>
+            <div class="montoFinal">
+                <span class="carritoTotal">Total Pedido: $0 </span>
+                <button id="botonFinalizarCompra" class="botonFinalizaCompra">Finalizar Compra</button>
+
+            </div>
+        </div>
+    </div>
     <header class="headerBoot">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.html"><img src="../media/logocardalesdos.png"
                         alt="foto logo"></a>
+                <div class="containerCart">
+                    <div class="botonCarrito">
+                        <button id="btnCarrito"><img src="../media/carrito.png" alt=""></button>
+                        <img id="carritoCondicion" src="../media/circuloverde.png" alt="">
+                    </div>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -62,279 +108,21 @@
 
     <section id="picadas" class="picadas">
 
+
         <div class="picadasMenu">
             <div class="tituloPicadas sombra">
                 <h1>Nuestras Picadas.</h1>
             </div>
-
-
-            <!--Selector tamaño-->
-            <div class="picadasMenuTitulos">
-                <div class="dropdown">
-                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Seleccione Tamaño
-                    </a>
-
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a id="chicas" class="dropdown-item" href="#tablasChicas">Chicas (Comen 2| Pican 3)</a></li>
-                        <li><a id="medianas" class="dropdown-item" href="#tablasMedianas">Medianas (Comen 4| Pican
-                                6)</a>
-                        </li>
-                        <li><a id="grandes" class="dropdown-item" href="#tablasGrandes">Grandes (Comen 6| Pican 9)</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="botonCarrito">
-                    <button id="btnCarrito">carrito</button>
-                </div>
-
-            </div>
-
-
-
         </div>
 
 
         <!--Imagenes picadas-->
-        <div class="fotosPicadas" id="divPicadas">
-            <div class="containerPicadas" id="tablasChicas">
-                <div class="containerTitulo">
-                    <h2>Chicas.</h2>
-                    <h4>Tamaño Tabla: 15x40cm <br> Peso aprox: 600gr</h4>
-                </div>
-                <div class="containerInterno">
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/Picada_18c.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Chacarera</h5>
-                                    <span class="precios">1000</span>
-                                    <h6 class="tamano">Chica</h6>
-                                </div>
+        <div id="contenedorPicadas" class="fotosPicadas" id="divPicadas">
 
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-danger animation">Oferta</a>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/Picada_12c.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Carnavalito</h5>
-                                    <span class="precios">1000</span>
-                                    <h6 class="tamano">Chica</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-dark">Comprar</a>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/Picada_22c.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Malambo</h5>
-                                    <span class="precios">1000</span>
-                                    <h6 class="tamano">Chica</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-dark">Comprar</a>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/Picada_31c.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Milonga</h5>
-                                    <span class="precios">1000</span>
-                                    <h6 class="tamano">Chica</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-dark">Comprar</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-            </div>
-            <div class="containerPicadas" id="tablasMedianas">
-                <div class="containerTitulo">
-                    <h2>Medianas.</h2>
-                    <h4>Tamaño Tabla: 30x40cm <br> Peso aprox: 1100gr</h4>
-                </div>
-                <div class="containerInterno">
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/chaca4.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Chacarera</h5>
-                                    <span class="precios">1500</span>
-                                    <h6 class="tamano">Mediana</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-danger animation">Oferta</a>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/carnava4.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Carnavalito</h5>
-                                    <span class="precios">1500</span>
-                                    <h6 class="tamano">Mediana</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-dark">Comprar</a>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/malambo4.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Malambo</h5>
-                                    <span class="precios">1500</span>
-                                    <h6 class="tamano">Mediana</h6>
-                                </div>
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-dark">Comprar</a>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/milonga4.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Milonga</h5>
-                                    <span class="precios">1500</span>
-                                    <h6 class="tamano">Mediana</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-dark">Comprar</a>
-                            </div>
-                        </div>
-                </div>
-                </article>
-            </div>
-
-            <div class="containerPicadas" id="tablasGrandes">
-                <div class="containerTitulo">
-                    <h2>Grandes.</h2>
-                    <h4>Tamaño Tabla: 33x55cm <br> Peso aprox: 1700gr</h4>
-                </div>
-                <div class="containerInterno">
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/chaca6.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Chacarera</h5>
-                                    <span class="precios">2000</span>
-                                    <h6 class="tamano">Grande</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-danger animation">Oferta</a>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/Picada_12c.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Carnavalito</h5>
-                                    <span class="precios">2000</span>
-                                    <h6 class="tamano">Grande</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-dark">Comprar</a>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/malambo6.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Malambo</h5>
-                                    <span class="precios">2000</span>
-                                    <h6 class="tamano">Grande</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-dark">Comprar</a>
-                            </div>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="card sombra" style="width: 100%;">
-                            <img src="../media/milonga6.jpg" class="card-img-top" alt="picadaUno">
-                            <div class="card-body">
-                                <div class="divProducto">
-                                    <h5 class="card-title">Milonga</h5>
-                                    <span class="precios">2000</span>
-                                    <h6 class="tamano">Grande</h6>
-                                </div>
-
-                                <a href="https://api.whatsapp.com/send?phone=5492216435164&text=Hola! Estoy interesado en una picada."
-                                    class="btnjs btn btn-dark">Comprar</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
         </div>
-        <div id="shopCart" class="shopCart">
-            <div id="carrito" class="carrito">
-                <h3>Tu pedido</h3>
-                <button id="cerrarCarrito" class="cerrarCarrito">x</button>
-                <div class="carritoTitulosA">
-                    <ul class="carritoTitulos1 lista">
-                        <li class="productoTituloPrecio">ITEM</li>
-                    </ul>
-                    <ul class="carritoTitulos2 lista">
 
-                        <li class="productoCantidad">CANT</li>
-                        <li class="valorTotal">PRECIO</li>
-                        <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="montoFinal">
-                <span class="carritoTotal">Total Pedido: $0 </span>
-                <button class="botonFinalizaCompra">Finalizar Compra</button>
 
-            </div>
-        </div>
+
         <!-- BOTON WHATSAPP -->
 
         <div class="btn-whatsapp">
@@ -388,8 +176,9 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
 
-        <script src="../js/scripts.js"></script>
+        
         <script src="../js/carritos.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
